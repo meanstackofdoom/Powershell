@@ -115,7 +115,7 @@ while ($true) {
             $logLine | Out-File -Append -FilePath $logFilePath
         }
 
-        $pingMessages += "<br />"  # Add a <br> under each site instead of <hr>
+        $pingMessages += "<br />"  
     }
 
     $formattedMessage += "$($pingMessages -join '')</body></html>"
