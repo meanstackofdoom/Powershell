@@ -63,3 +63,41 @@ Script written to update the weather from weatherapi.com to a dedicated Teams ch
 - 2023-09-10 Max Temp: 16.0°C (60.8°F) Min Temp: 8.1°C (46.6°F)  Condition: Sunny<br>
 - 2023-09-11 Max Temp: 16.9°C (62.4°F) Min Temp: 9.1°C (48.4°F)  Condition: Sunny<br>
 - 2023-09-12 Max Temp: 18.7°C (65.7°F) Min Temp: 12.4°C (54.3°F) Condition: Patchy rain possible
+
+---
+
+## check_enrolment.ps1
+
+<p>Check out the Teams enrolled intune script on GitHub:</p>
+
+<a href="https://github.com/meanstackofdoom/Powershell-Scripts-Teams/blob/main/intune_check_enrolled.ps1">Device Enrollment</a>
+
+This script is designed to monitor Intune-managed devices and send notifications to a Microsoft Teams channel when new devices are enrolled within the last 6 hours. It continues to run indefinitely<br><br>
+
+The script performs the following tasks:<br>
+1. Checks for the presence of the "Microsoft.Graph.Intune" PowerShell module and installs it if missing.<br>
+2. Establishes a connection to Microsoft Graph.<br>
+3. Updates the Microsoft Graph environment schema to the beta version.<br>
+4. Calculates a time threshold to determine if any devices were enrolled within a specified time frame (default is 6 hours).<br>
+5. Queries Intune-managed devices that meet the enrollment criteria.<br>
+6. Sends a message to a Microsoft Teams channel with details of the enrolled devices, if any.<br>
+7. Repeats the monitoring process at regular intervals.<br>
+
+
+.NOTES<br>
+- You should replace the webhook URLs with your actual Microsoft Teams webhook URLs.<br>
+- Customize the script as needed for your environment.<br>
+- Ensure that the "Run-IntuneCheck" function, which is referenced but not defined in this script, is defined elsewhere in your environment.<br>
+
+---
+
+## check_sync.ps1
+
+<p>Check out the Teams enrolled intune script on GitHub:</p>
+
+<a href="https://github.com/meanstackofdoom/Powershell-Scripts-Teams/blob/main/intune_check_sync.ps1">Device Sync</a>
+
+This PowerShell script periodically checks the status of Microsoft Intune-managed devices to identify those that haven't synced in a specified timeframe. It then sends a detailed report to a Microsoft Teams channel using a webhook, allowing for proactive device management and monitoring
+
+---
+
